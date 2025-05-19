@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.react-calendar {
+  border: none;
+  font-family: inherit;
+  width: 100%;
+}
+
+.react-calendar__tile {
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.react-calendar__tile--active {
+  background-color: #c71585 !important; /* magenta */
+  color: white !important;
+  border-radius: 0.5rem;
+}
+
+.bg-magenta {
+  background-color: #c71585 !important;
+}
+
+.bg-softpink {
+  background-color: #f4c2c2 !important;
+}
+
+.text-charcoal {
+  color: #333333;
+}
