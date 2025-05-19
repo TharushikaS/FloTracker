@@ -1,0 +1,524 @@
+/* Tracker.css - Modern, responsive styles for period tracker app */
+
+/* Base styles and variables */
+:root {
+  --primary: #ff5d8f;
+  --primary-light: #ff8fab;
+  --primary-lighter: #ffc2d1;
+  --primary-lightest: #ffe5ec;
+  --secondary: #a079db;
+  --secondary-light: #c9b6f3;
+  --text-dark: #333333;
+  --text-medium: #666666;
+  --text-light: #999999;
+  --white: #ffffff;
+  --success: #4ade80;
+  --fertile: #90e0ef;
+  --predicted: #ffafcc;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --border-radius: 16px;
+  --border-radius-sm: 8px;
+  --border-radius-lg: 24px;
+  --transition: all 0.3s ease;
+}
+
+.tracker-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  transition: var(--transition);
+}
+
+/* Calendar section */
+.calendar-section {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.month-nav {
+  background-color: var(--white);
+  color: var(--primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.month-nav:hover {
+  background-color: var(--primary-lightest);
+  transform: scale(1.05);
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: 500;
+  color: var(--text-medium);
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+
+.calendar-day:hover {
+  background-color: var(--primary-lightest);
+}
+
+.calendar-day.empty {
+  cursor: default;
+}
+
+.calendar-day.selected {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 2px 10px rgba(255, 93, 143, 0.4);
+}
+
+.calendar-day.period {
+  background-color: var(--primary-light);
+  color: var(--white);
+}
+
+.calendar-day.predicted {
+  background-color: var(--predicted);
+  color: var(--text-dark);
+}
+
+.calendar-day.fertile {
+  background-color: var(--fertile);
+  color: var(--text-dark);
+}
+
+.calendar-day.selected.period,
+.calendar-day.selected.predicted,
+.calendar-day.selected.fertile {
+  box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--primary);
+}
+
+.calendar-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-medium);
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.legend-color.period {
+  background-color: var(--primary-light);
+}
+
+.legend-color.predicted {
+  background-color: var(--predicted);
+}
+
+.legend-color.fertile {
+  background-color: var(--fertile);
+}
+
+/* Selected date info */
+.selected-date-info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.selected-date-info h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Tracking sections */
+.tracking-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tracking-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.tracking-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.tracking-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+}
+
+.tracking-card h3 svg {
+  color: var(--primary);
+}
+
+/* Flow tracking */
+.flow-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 0.8rem;
+}
+
+.flow-option {
+  padding: 0.6rem;
+  text-align: center;
+  border-radius: var(--border-radius-sm);
+  border: 2px solid var(--primary-lighter);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.flow-option.selected {
+  border-color: var(--primary);
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* Mood tracking */
+.mood-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 0.8rem;
+}
+
+.mood-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.mood-option:hover {
+  background-color: var(--primary-lightest);
+}
+
+.mood-option.selected {
+  background-color: var(--primary-lightest);
+  border-color: var(--primary-light);
+}
+
+.mood-emoji {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.mood-label {
+  font-size: 0.8rem;
+  color: var(--text-medium);
+}
+
+/* Symptoms tracking */
+.symptom-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.symptom-option {
+  padding: 0.5rem 1rem;
+  background-color: var(--white);
+  border: 1px solid var(--primary-lighter);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.85rem;
+}
+
+.symptom-option:hover {
+  background-color: var(--primary-lightest);
+}
+
+.symptom-option.selected {
+  background-color: var(--primary-light);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.info-button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.tip-box {
+  background-color: var(--secondary-light);
+  padding: 0.8rem;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.tip-box::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--secondary-light);
+}
+
+/* Notes tracking */
+.notes-tracking textarea {
+  width: 100%;
+  height: 120px;
+  padding: 0.8rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--primary-lighter);
+  resize: vertical;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.notes-tracking textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 93, 143, 0.2);
+}
+
+/* Save button */
+.save-button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(255, 93, 143, 0.3);
+}
+
+.save-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 93, 143, 0.4);
+}
+
+/* Cycle prediction */
+.cycle-prediction {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 1.5rem;
+}
+
+.cycle-prediction h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.cycle-prediction h3 svg {
+  color: var(--primary);
+}
+
+.prediction-info {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.prediction-info div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.prediction-info strong {
+  color: var(--text-dark);
+}
+
+.average-cycle {
+  margin-top: 0.5rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--primary-lighter);
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--success);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  transition: bottom 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.toast.show {
+  bottom: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .tracker-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .tracking-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .calendar-section {
+    padding: 1rem;
+  }
+  
+  .weekdays div,
+  .calendar-day {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .calendar-header h2 {
+    font-size: 1.1rem;
+  }
+  
+  .flow-options,
+  .mood-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .symptom-options {
+    gap: 0.5rem;
+  }
+  
+  .symptom-option {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .prediction-info {
+    font-size: 0.85rem;
+  }
+}
