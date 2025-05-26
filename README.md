@@ -52,7 +52,7 @@ Menstrual health is a vital aspect of women's overall well-being, yet it's often
 
 ## 🎨 Figma Design/Prototype
 
-📌 **Figma Link**: [https://www.figma.com/file/YOUR_FIGMA_LINK](https://www.figma.com/design/zLFmEiOorzvhU9zdc2QntE/Untitled?node-id=4-186&t=ReVL0Xmd8OClO6Qx-1)
+📌 **Figma Link**: [https://www.figma.com/file/[https://www.figma.com/design/zLFmEiOorzvhU9zdc2QntE/Untitled?node-id=4-186&t=ReVL0Xmd8OClO6Qx-1]
 
 ---
 
