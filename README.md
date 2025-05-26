@@ -14,7 +14,7 @@ Menstrual health is a vital aspect of women's overall well-being, yet it's often
 - **Vite** – Fast frontend tooling  
 - **React Router** – For page navigation  
 - **LocalStorage** – For persisting user data  
-- **Netlify & Vercel** – Deployment platforms  
+- **Netlify** – Deployment platforms  
 
 ---
 
@@ -45,8 +45,7 @@ Menstrual health is a vital aspect of women's overall well-being, yet it's often
 ---
 
 ## 🚀 Deployment
-
-🔗 **Live Link on Vercel**: [https://flotracker.vercel.app/](https://flotracker.vercel.app/)  
+ 
 🖥️ **Frontend Demo (Netlify)**: [https://flotracker.netlify.app/](https://flotracker.netlify.app/)
 
 ---
