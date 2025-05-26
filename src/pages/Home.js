@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, BarChart2, Heart, MessageCircle, Clock, Gift, ChevronRight } from 'lucide-react';
-import image1 from '../assets/image1.png';
+import { Calendar, BarChart2, Heart, MessageCircle, Clock, Gift, ChevronRight, Shield, Users, Award, Zap } from 'lucide-react';
+import image1 from '../assets/image3.png';
 
 
 const Home = () => {
@@ -63,6 +63,34 @@ const Home = () => {
     }
   ];
 
+  // Why Choose Us data
+  const whyChooseUs = [
+    {
+      icon: <Shield size={32} />,
+      title: "Privacy First",
+      description: "Your data is encrypted and stored securely. We never share your personal health information.",
+      stat: "100% Private"
+    },
+    {
+      icon: <Users size={32} />,
+      title: "Trusted Community",
+      description: "Join thousands of women worldwide who trust FloTracker for their menstrual health.",
+      stat: "50K+ Users"
+    },
+    {
+      icon: <Award size={32} />,
+      title: "Expert Approved",
+      description: "Developed with gynecologists and healthcare professionals for accuracy and reliability.",
+      stat: "Doctor Recommended"
+    },
+    {
+      icon: <Zap size={32} />,
+      title: "Smart Predictions",
+      description: "Our AI-powered algorithm learns your unique patterns for highly accurate predictions.",
+      stat: "95% Accuracy"
+    }
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -77,7 +105,7 @@ const Home = () => {
           <canvas ref={canvasRef} className="w-full h-full" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 py-16 md:py-24">
+        <div className="relative z-10 container mx-auto px-4 py-6 md:py-10">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ x: -50, opacity: 0 }}
@@ -104,7 +132,7 @@ const Home = () => {
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="hidden md:block"
+              className="hidden md:flex mt-8 justify-end"
             >
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-3xl"></div>
@@ -164,7 +192,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* App Screenshot Preview */}
+      {/* Why Choose Us Section */}
       <section className="py-16 bg-gradient-to-b from-white to-bgLight">
         <div className="container mx-auto px-4">
           <motion.div 
@@ -174,33 +202,60 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Experience <span className="gradient-text">Beautiful Design</span></h2>
+            <h2 className="text-3xl font-bold mb-4">Why Choose <span className="gradient-text">FloTracker</span>?</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our intuitive interface makes tracking your cycles and health a seamless experience.
+              Experience the difference with our commitment to your privacy, accuracy, and wellbeing.
             </p>
           </motion.div>
           
-          <div className="relative">
-            <motion.div
-              initial={{ y: 40, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8"
-            >
-              <div className="relative p-2 bg-white rounded-3xl shadow-xl transform md:rotate-[-3deg] md:translate-y-6">
-                <img src="/api/placeholder/300/600" alt="App Screenshot 1" className="rounded-2xl w-full h-auto" />
-              </div>
-              <div className="relative p-2 bg-white rounded-3xl shadow-xl z-10 md:scale-110">
-                <img src="/api/placeholder/300/600" alt="App Screenshot 2" className="rounded-2xl w-full h-auto" />
-              </div>
-              <div className="relative p-2 bg-white rounded-3xl shadow-xl transform md:rotate-[3deg] md:translate-y-6">
-                <img src="/api/placeholder/300/600" alt="App Screenshot 3" className="rounded-2xl w-full h-auto" />
-              </div>
-            </motion.div>
-            
-            <div className="absolute -inset-10 -z-10 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-full blur-3xl opacity-50"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyChooseUs.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white p-6 rounded-xl shadow-lg text-center group hover:shadow-xl transition-all duration-300"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
+                <div className="text-2xl font-bold text-primary mb-2">{item.stat}</div>
+                <h3 className="text-xl font-semibold mb-3 text-dark">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
+              </motion.div>
+            ))}
           </div>
+          
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center mt-12"
+          >
+            <div className="bg-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">50K+</div>
+                  <div className="text-gray-600">Happy Users</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">95%</div>
+                  <div className="text-gray-600">Accuracy Rate</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">4.8★</div>
+                  <div className="text-gray-600">App Rating</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+                  <div className="text-gray-600">Support</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
