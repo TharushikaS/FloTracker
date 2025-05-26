@@ -27,7 +27,7 @@
 .tracker-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 6rem 1.5rem;
   font-family: 'Poppins', sans-serif;
   color: var(--text-dark);
 }
