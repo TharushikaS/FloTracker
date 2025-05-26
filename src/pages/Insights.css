@@ -1,6 +1,6 @@
-/* Insights.css - Modern, feminine-styled UI for period tracker insights */
-/* Aligned with Tracker.css styling and variables */
+/* Insights.css - Modern, responsive styles for insights page with consistent colors */
 
+/* Use the same color variables as Tracker.css */
 :root {
   --primary: #ff5d8f;
   --primary-light: #ff8fab;
@@ -25,23 +25,23 @@
 }
 
 .insights-container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
-  color: var(--text-dark);
+  padding: 6rem 1.5rem;
   font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
 }
 
 .insights-container h1 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-weight: 600;
   font-size: 2.5rem;
+  margin-bottom: 2rem;
   background: linear-gradient(90deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   position: relative;
+  font-weight: 600;
 }
 
 .insights-container h1::after {
@@ -56,68 +56,58 @@
   border-radius: 2px;
 }
 
-/* Tab Navigation */
-.insights-tabs {
+/* Loading styles */
+.insights-loading {
   display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-  gap: 0.5rem;
-}
-
-.insights-tabs button {
-  background-color: var(--white);
-  border: 2px solid var(--primary-lighter);
-  border-radius: 2rem;
-  padding: 0.7rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--primary);
-  cursor: pointer;
-  transition: var(--transition);
-  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  min-height: 60vh;
+  color: var(--primary);
 }
 
-.insights-tabs button:hover {
-  background-color: var(--primary-lightest);
+.loading-spinner {
+  margin-bottom: 1rem;
+  color: var(--primary);
 }
 
-.insights-tabs button.active {
-  background-color: var(--primary-light);
-  color: var(--white);
-  border-color: var(--primary-light);
+.insights-loading h3 {
+  color: var(--text-medium);
+  font-weight: 500;
 }
 
-/* Time Frame Selector */
+/* Time frame selector */
 .time-frame-selector {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
-}
-
-.time-frame-selector span {
-  margin-right: 0.5rem;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
   color: var(--text-medium);
 }
 
 .time-frame-selector select {
-  padding: 0.4rem 1rem;
-  border-radius: 1.5rem;
-  border: 1px solid var(--primary-lighter);
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--primary-lighter);
+  border-radius: var(--border-radius-sm);
   background-color: var(--white);
-  color: var(--primary);
+  color: var(--text-dark);
+  font-family: inherit;
   cursor: pointer;
-  font-size: 0.9rem;
-  font-family: 'Poppins', sans-serif;
+  transition: var(--transition);
 }
 
-/* Stats Cards */
+.time-frame-selector select:hover,
+.time-frame-selector select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 93, 143, 0.2);
+}
+
+/* Stats cards */
 .stats-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -128,565 +118,217 @@
   padding: 1.5rem;
   box-shadow: var(--shadow-md);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 1rem;
   transition: var(--transition);
-  border-left: 4px solid var(--primary-light);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
 }
 
 .stat-card svg {
   color: var(--primary);
-  margin-right: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
 }
 
 .stat-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-dark);
   font-size: 1rem;
-  margin: 0 0 0.3rem 0;
-  color: var(--text-medium);
+  font-weight: 600;
 }
 
 .stat-value {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--primary);
-  margin: 0;
+  margin: 0 0 0.5rem 0;
 }
 
-/* Insight Cards */
+.stat-explanation {
+  font-size: 0.85rem;
+  color: var(--text-medium);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Insight cards */
 .insight-card {
   background-color: var(--white);
   border-radius: var(--border-radius);
-  margin-bottom: 1.5rem;
   box-shadow: var(--shadow-md);
-  overflow: hidden;
+  margin-bottom: 1.5rem;
   transition: var(--transition);
+  overflow: hidden;
 }
 
 .insight-card:hover {
   box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
 }
 
 .insight-card.expanded {
-  box-shadow: var(--shadow-lg);
+  transform: none;
 }
 
 .card-header {
-  padding: 1.2rem 1.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
+  background-color: var(--primary-lightest);
   transition: var(--transition);
 }
 
-.insight-card.expanded .card-header {
-  border-bottom-color: var(--primary-lightest);
+.card-header:hover {
+  background-color: var(--primary-lighter);
 }
 
 .card-header h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: var(--primary);
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
-.card-header svg {
-  color: var(--primary-light);
+.card-header h3 svg {
+  color: var(--primary);
+}
+
+.card-header svg:last-child {
+  color: var(--primary);
 }
 
 .card-content {
   padding: 1.5rem;
-  overflow: hidden;
+  border-top: 1px solid var(--primary-lighter);
 }
 
-/* Chart Styles */
+/* Chart cards grid */
+.chart-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Chart container */
 .chart-container {
-  height: 300px;
   margin-bottom: 1.5rem;
+  background-color: var(--primary-lightest);
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
 }
 
+/* Insight analysis */
 .insight-analysis h4 {
   color: var(--primary);
-  margin-top: 0;
   font-size: 1.1rem;
   font-weight: 600;
+  margin: 0 0 1rem 0;
 }
 
 .insight-analysis p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
   color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
 }
 
-.chart-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Symptom & Mood Tips */
-.symptom-tip, .mood-tip, .flow-tip {
-  display: flex;
-  align-items: flex-start;
-  background-color: var(--primary-lightest);
-  border-radius: var(--border-radius-sm);
-  padding: 1rem;
-  margin-top: 1rem;
-}
-
-.symptom-tip svg, .mood-tip svg, .flow-tip svg {
-  color: var(--primary-light);
-  min-width: 16px;
-  margin-right: 0.8rem;
-  margin-top: 0.2rem;
-}
-
-.symptom-tip p, .mood-tip p, .flow-tip p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--text-medium);
-}
-
-/* Current Phase Card */
-.current-phase-card {
-  background-color: var(--primary-lightest);
-  border-radius: var(--border-radius);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: var(--shadow-md);
-}
-
-.current-phase-card h3 {
-  margin-top: 0;
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.phase-content {
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.phase-icon {
-  background-color: var(--white);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1.5rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.phase-icon svg {
-  color: var(--primary);
-}
-
-.phase-info h4 {
-  margin-top: 0;
-  font-size: 1.1rem;
-  color: var(--primary);
-  font-weight: 600;
-}
-
-.phase-info p {
+.insight-analysis p:last-child {
   margin-bottom: 0;
-  line-height: 1.6;
-  color: var(--text-dark);
 }
 
-/* Wellness Tips */
-.wellness-tips h4, .nutrition-tips h4, .exercise-tips h4 {
-  color: var(--primary);
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.wellness-tips h4:first-child {
-  margin-top: 0;
-}
-
-.tips-list {
-  padding-left: 1.2rem;
-}
-
-.tips-list li {
-  margin-bottom: 0.8rem;
-  line-height: 1.5;
-  color: var(--text-dark);
-}
-
-/* Self-Care Strategies */
-.self-care-strategies h4 {
-  color: var(--primary);
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.self-care-strategies h4:first-child {
-  margin-top: 0;
-}
-
-.self-care-strategies ul {
-  padding-left: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.self-care-strategies li {
-  margin-bottom: 0.8rem;
-  line-height: 1.5;
-  color: var(--text-dark);
-}
-
-/* Symptom Management */
-.symptom-management h4 {
-  color: var(--primary);
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.symptom-management h4:first-child {
-  margin-top: 0;
-}
-
-.symptom-management ul {
-  padding-left: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.symptom-management li {
-  margin-bottom: 0.8rem;
-  line-height: 1.5;
-  color: var(--text-dark);
-}
-
-.warning-note {
+/* Tips */
+.symptom-tip,
+.mood-tip,
+.flow-tip {
+  background-color: var(--secondary-light);
+  padding: 1rem;
+  border-radius: var(--border-radius-sm);
+  margin-top: 1rem;
   display: flex;
   align-items: flex-start;
-  background-color: var(--primary-lightest);
-  border-radius: var(--border-radius-sm);
-  padding: 1rem;
-  margin-top: 1rem;
+  gap: 0.5rem;
 }
 
-.warning-note svg {
-  color: var(--primary);
-  min-width: 18px;
-  margin-right: 0.8rem;
-  margin-top: 0.2rem;
+.symptom-tip svg,
+.mood-tip svg,
+.flow-tip svg {
+  color: var(--secondary);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
 }
 
-.warning-note p {
+.symptom-tip p,
+.mood-tip p,
+.flow-tip p {
   margin: 0;
+  color: var(--text-dark);
   font-size: 0.9rem;
-  color: var(--primary);
 }
 
-/* Resources Tab */
-.resources-intro {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.resources-intro h3 {
-  color: var(--primary);
-  margin-top: 0;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-.resources-intro p {
-  max-width: 600px;
-  margin: 0.5rem auto 0;
-  color: var(--text-medium);
-}
-
-.resources-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-.resource-card {
-  background-color: var(--white);
-  border-radius: var(--border-radius);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-}
-
-.resource-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
-}
-
-.resource-card h4 {
-  color: var(--primary);
-  margin-top: 0;
-  margin-bottom: 0.8rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.resource-card p {
-  flex-grow: 1;
-  margin-top: 0;
-  line-height: 1.5;
-  color: var(--text-medium);
-}
-
-.resource-button {
-  background-color: var(--white);
-  border: 2px solid var(--primary-light);
-  color: var(--primary);
-  border-radius: 2rem;
-  padding: 0.6rem 1.2rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: var(--transition);
-  margin-top: 1rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-.resource-button:hover {
-  background-color: var(--primary-light);
-  color: var(--white);
-}
-
-/* FAQ Section */
-.faq-section {
-  margin-bottom: 3rem;
-}
-
-.faq-section h3 {
-  color: var(--primary);
-  margin-bottom: 1.5rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-.faq-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.faq-card {
-  background-color: var(--white);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-}
-
-.faq-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
-
-.faq-card.active {
-  box-shadow: var(--shadow-lg);
-}
-
-.faq-question {
-  padding: 1.2rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.faq-card.active .faq-question {
-  border-bottom: 1px solid var(--primary-lightest);
-}
-
-.faq-question h4 {
-  margin: 0;
-  font-size: 1rem;
-  color: var(--primary);
-  font-weight: 600;
-}
-
-.faq-question svg {
-  color: var(--primary-light);
-}
-
-.faq-answer {
-  padding: 0 1.5rem 1.5rem;
-}
-
-.faq-answer p {
-  margin: 0;
-  line-height: 1.6;
-  color: var(--text-medium);
-}
-
-/* Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-  .insights-container h1 {
-    font-size: 2rem;
-  }
-  
-  .insights-tabs {
-    flex-wrap: wrap;
-  }
-  
-  .insights-tabs button {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .phase-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .phase-icon {
-    margin-bottom: 1rem;
-    margin-right: 0;
-  }
-  
-  .chart-container {
-    height: 250px;
-  }
-}
-
-@media screen and (max-width: 576px) {
+/* Responsive styles */
+@media (max-width: 768px) {
   .insights-container {
     padding: 1.5rem 1rem;
   }
   
   .insights-container h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+  
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-cards {
+    grid-template-columns: 1fr;
   }
   
   .stat-card {
-    padding: 1rem;
+    padding: 1.2rem;
+  }
+  
+  .card-header,
+  .card-content {
+    padding: 1.2rem;
+  }
+  
+  .time-frame-selector {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .insights-container h1 {
+    font-size: 1.8rem;
   }
   
   .stat-value {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   
-  .card-header {
-    padding: 1rem;
+  .card-header h3 {
+    font-size: 1rem;
   }
   
-  .card-content {
-    padding: 1rem;
+  .chart-cards {
+    grid-template-columns: 1fr;
   }
   
-  .chart-container {
-    height: 200px;
-  }
-}
-
-/* Accessibility Enhancements */
-.insights-tabs button:focus,
-.resource-button:focus,
-.faq-question:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
-
-/* Print Styles */
-@media print {
-  .insights-container {
-    padding: 0;
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
   }
   
-  .insights-tabs,
-  .time-frame-selector {
-    display: none;
-  }
-  
-  .insight-card {
-    page-break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ddd;
-  }
-  
-  .resource-button {
-    display: none;
-  }
-}
-
-/* Animation for card expansion */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.card-content {
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-dark: #e0e0e0;
-    --text-medium: #b0b0b0;
-    --text-light: #808080;
-    --white: #333333;
-  }
-  
-  .insights-container {
-    background-color: #222;
-  }
-  
-  .insight-card,
-  .stat-card,
-  .resource-card,
-  .faq-card {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .symptom-tip,
-  .mood-tip,
-  .flow-tip,
-  .current-phase-card {
-    background-color: #2a2a2a;
-  }
-  
-  .warning-note {
-    background-color: #3a2a2a;
-  }
-  
-  .phase-icon {
-    background-color: #444;
-  }
-  
-  .time-frame-selector select {
-    background-color: #333;
-    border-color: #555;
+  .stat-info h3 {
+    margin-top: 0.5rem;
   }
 }
