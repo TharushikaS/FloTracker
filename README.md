@@ -58,14 +58,14 @@ Menstrual health is a vital aspect of women's overall well-being, yet it's often
 
 ## 🎥 Video Demonstration
 
-📹 **Google Drive Link (max 4 min)**:  
+📹 **Google Drive Link**:  
 [https://drive.google.com/file/d/YOUR_VIDEO_LINK/view?usp=sharing](https://drive.google.com/file/d/YOUR_VIDEO_LINK/view?usp=sharing)
 
 ---
 
 ## 👩‍🎓 About the Developer
 
-Tharushika Surasinghe from the department of Computer Engineering (3rd year)
+Tharushika Surasinghe from the Department of Computer Engineering (3rd year)
 
 
 ---
