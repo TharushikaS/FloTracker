@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# 🌸 FloTracker - Your Personal Menstrual Health Companion
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🔍 Why I Selected This Topic
 
-## Available Scripts
+Menstrual health is a vital aspect of women's overall well-being, yet it's often overlooked or under-discussed. I chose this topic to provide a **private**, **intuitive**, and **empowering** tool for people who menstruate to track their cycles, monitor symptoms, and gain personalized insights into their health. With FloTracker, I aim to contribute to breaking the stigma and promoting self-awareness and wellness.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🛠️ Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React.js** – Frontend framework  
+- **Tailwind CSS** – Styling the UI  
+- **Vite** – Fast frontend tooling  
+- **React Router** – For page navigation  
+- **LocalStorage** – For persisting user data  
+- **Netlify & Vercel** – Deployment platforms  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🌟 Key Features and Functions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🏠 Home Page
+- Overview of the app's mission  
+- Quick access buttons: *Start Tracking*, *Explore Features*  
+- Testimonials, statistics, and community trust section  
 
-### `npm run build`
+### 📅 Tracker Page
+- Interactive menstrual calendar  
+- Add symptoms, moods, and notes  
+- Flow intensity, mood, and symptom tracking  
+- Period predictions and fertile window  
+- Smart reminders (UI only)  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 📊 Insights Page
+- Cycle summary (length, regularity, period length)  
+- Visual data on cycle patterns and symptoms  
+- Personalized health insights  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 💡 Tips Page
+- Wellness tips categorized by **physical**, **mental**, **nutrition**  
+- Filter by cycle phase (e.g., Menstrual, Premenstrual)  
+- Ability to search and save tips for later  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🚀 Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🔗 **Live Link on Vercel**: [https://flotracker.vercel.app/](https://flotracker.vercel.app/)  
+🖥️ **Frontend Demo (Netlify)**: [https://flotracker.netlify.app/](https://flotracker.netlify.app/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🎨 Figma Design/Prototype
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+📌 **Figma Link**: [https://www.figma.com/file/YOUR_FIGMA_LINK](https://www.figma.com/file/YOUR_FIGMA_LINK)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎥 Video Demonstration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📹 **Google Drive Link (max 4 min)**:  
+[https://drive.google.com/file/d/YOUR_VIDEO_LINK/view?usp=sharing](https://drive.google.com/file/d/YOUR_VIDEO_LINK/view?usp=sharing)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 👩‍🎓 About the Developer
 
-### Analyzing the Bundle Size
+Tharushika Surasinghe from the department of Computer Engineering (3rd year)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
