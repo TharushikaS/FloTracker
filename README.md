@@ -14,7 +14,7 @@ Menstrual health is a vital aspect of women's overall well-being, yet it's often
 - **Vite** – Fast frontend tooling  
 - **React Router** – For page navigation  
 - **LocalStorage** – For persisting user data  
-- **Netlify** – Deployment platforms  
+- **Netlify** – Deployment platforms (as Vercel currently does not support deployment services for users located in Sri Lanka.)  
 
 ---
 
