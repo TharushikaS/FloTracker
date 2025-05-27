@@ -59,8 +59,7 @@ Menstrual health is a vital aspect of women's overall well-being, yet it's often
 ## 🎥 Video Demonstration
 
 📹 **Google Drive Link**:  
-[https://drive.google.com/file/d/https://drive.google.com/file/d/1Kg72l199xUIS7vLVev-DbmyFv5cteGdr/view?usp=sharing/view?usp=sharing]
-(https://drive.google.com/file/d/YOUR_VIDEO_LINK/view?usp=sharing](https://drive.google.com/file/d/1Kg72l199xUIS7vLVev-DbmyFv5cteGdr/view?usp=sharing)
+🎥 [Click here to watch the demo video](https://drive.google.com/file/d/1Kg72l199xUIS7vLVev-DbmyFv5cteGdr/view?usp=sharing)
 
 ---
 
